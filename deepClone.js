@@ -5,7 +5,14 @@ function deepCloning(obj)
     {
         return obj;
     }
-    var temp = {};
+    var temp = null;
+    if(Array.isArray(obj))
+    {
+        temp=[];
+    }
+    else{
+        temp={};
+    }
     for(var x in obj)
     {
         temp[x] = deepCloning(obj[x]);
@@ -14,15 +21,15 @@ function deepCloning(obj)
     return temp;
 }
 
-var originalObject = {
+var originalObject = [25,'darArray',{
     name: 'Darshan',
     age: 21,
     Profession: 'Software Engineer'
-};
+}];
 
 var duplicateObject = deepCloning(originalObject);
 
-originalObject.name = 'Harsh1111';
+originalObject[2].name = 'Harsh1111';
 console.log(originalObject);
 console.log(duplicateObject);
 
