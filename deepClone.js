@@ -1,4 +1,4 @@
-function deepCloning(obj,temp)
+function deepCloning(obj)
 {
     if(obj===null || typeof obj !== 'object') 
     {
@@ -6,26 +6,15 @@ function deepCloning(obj,temp)
     }
     if (obj.constructor != Object && obj.constructor != Array) return obj;
     
-    if (obj.constructor == Date || obj.constructor == RegExp || obj.constructor == Function ||
-        obj.constructor == String || obj.constructor == Number || obj.constructor == Boolean)
-        return new obj.constructor(obj);
-    temp = new obj.constructor();
-    //var temp={};
-    // if(Array.isArray(obj))
-    // {
-    //     temp=[];
-    // }
-    // else{
-    //     temp={};
-    // }
-    // for(var x in obj)
-    // {
-    //     temp[x] = deepCloning(obj[x]);
-    // }
+    // if (obj.constructor == Date || obj.constructor == RegExp || obj.constructor == Function ||
+    //     obj.constructor == String || obj.constructor == Number || obj.constructor == Boolean)
+    //     return new obj.constructor(obj);
+    
+    var temp={}
 
     for(var x in obj)
     {
-        temp[x] = (typeof temp[x] == 'undefined') ? deepCloning(obj[x], null) : temp[x];
+        temp[x] = (typeof temp[x] == 'undefined') ? deepCloning(obj[x]) : temp[x];
     }
 
     return temp;

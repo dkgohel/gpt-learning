@@ -1,3 +1,9 @@
+import java.time.ZoneId;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 interface Formula{
     double calculate(int a);
 
@@ -6,13 +12,23 @@ interface Formula{
     }
 }
 public class Test{
-    public static void main(String[] args){
-        Formula formula = new Formula(){
-            public double calculate(int a){
-                return sqrt(a*100);
-            }
-        };
-        System.out.println(formula.calculate(100));
-        System.out.println(formula.sqrt(16));
+    static int count = 0;
+
+        static void increment() {
+        count = count + 1;
+    }
+
+    public static void main(String[] args) {
+
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+        IntStream.range(0, 10000).forEach(i -> executor.submit(() -> increment()));
+
+        stop(executor);
+
+        System.out.println(count);
+    }
+
+    private static void stop(ExecutorService executor) {
     }
 }

@@ -1,4 +1,3 @@
-
 def binarysearch(a,num,left,right):
     if right<left:
         return -1
