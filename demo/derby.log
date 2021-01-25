@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sun Jan 24 17:19:40 GMT+03:00 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0177-34c3-c238-000003717790 
+on database directory memory:C:\Users\USER\Desktop\gpt-learning\demo\f48ec3a7-1e90-43cd-8f11-bef8bcbd2444 with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/C:/Users/USER/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Amazon.com Inc.
+java.runtime.version=1.8.0_282-b08
+user.dir=C:\Users\USER\Desktop\gpt-learning\demo
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
